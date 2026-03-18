@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHN Tools</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5S8H7G6VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5S8H7G6VZ9');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -536,6 +544,7 @@ function showHome() {
 
 function switchTo(mod) {
   current = mod;
+  gtag('event', 'open_module', {module: mod});
   if (!loaded[mod]) {
     var fr = document.getElementById('frame-'+mod);
     var b64 = DATA[mod];
