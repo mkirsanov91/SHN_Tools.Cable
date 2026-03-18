@@ -72,4 +72,3 @@ Questions? Email [mkirsanov91@gmail.com](mailto:mkirsanov91@gmail.com?subject=SH
 
 ---
 
-*With respect and love, from Misha 🤍*
