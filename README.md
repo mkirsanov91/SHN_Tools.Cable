@@ -11,7 +11,7 @@ Single-page web app with four modules for MEP engineers. Developed by [Shnabel D
 
 | Module | Standard | Output |
 |---|---|---|
-| **Cable Tray Fill** | IEC 60364 / NEC / BS 7671 | Fill %, visual cross-section, PDF |
+| **Cable Tray Fill** | IEC 60364 / NEC / BS 7671 | Fill %, single-layer derating mode, visual cross-section, PDF |
 | **Conduit Fill** | Israel Electrical Code (reg. 18, ch. 3) | Conduit size, multi-conduit project mode, PDF |
 | **Cable Pulling** | Tension & sidewall pressure analysis | Route profile, load scenarios, PDF report |
 | **EMI Separation** | EN 50174-2 | Cable-to-cable & tray-to-tray separation, visualization, PDF |
@@ -36,6 +36,7 @@ graph TD
 
     TRAY --> TRAY_STD["IEC 60364 / NEC / BS 7671"]
     TRAY --> TRAY_OUT["Fill % · Visual Cross-Section · PDF"]
+    TRAY --> TRAY_DERATE["Single-layer mode · 2-diameter spacing\nTable 90.7, Hok HaHashmal\nReduces thermal derating"]
 
     CONDUIT --> CONDUIT_STD["Israel Electrical Code\nreg. 18, ch. 3\nFormula: D = √n × d × 1.6"]
     CONDUIT --> CONDUIT_TYPES["PVC / PP / HDPE / Steel\nMetric & Imperial\nMV 22kV–33kV (N2XSY / NA2XSY)"]
@@ -55,6 +56,7 @@ graph TD
 - **Multilingual** — English, Hebrew (RTL), Russian
 - **Dark / Light theme**
 - **PDF export** in every module
+- **Single-layer derating mode** — Cable Tray Fill module supports 2-diameter spacing between cables per Table 90.7 (Hok HaHashmal) to reduce thermal interaction and minimize current derating; gap dimensions shown visually on cross-section
 - **No install** — pure HTML/CSS/JS, runs in any browser
 - **No dependencies** — no server, no framework, no build step
 
