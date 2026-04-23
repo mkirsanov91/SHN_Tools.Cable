@@ -11,7 +11,7 @@ Single-page web app with four modules for MEP engineers. Developed by [Shnabel D
 
 | Module | Standard | Output |
 |---|---|---|
-| **Cable Tray Fill** | IEC 60364 / NEC / BS 7671 | Fill %, single-layer derating mode, visual cross-section, PDF |
+| **Cable Tray Fill** | IEC 60364 / NEC / BS 7671 | Fill %, single-layer derating mode, trefoil arrangement (HV), bend radius check, visual cross-section, PDF |
 | **Conduit Fill** | Israel Electrical Code (reg. 18, ch. 3) | Conduit size, multi-conduit project mode, PDF |
 | **Cable Pulling** | Tension & sidewall pressure analysis | Route profile, load scenarios, PDF report |
 | **EMI Separation** | EN 50174-2 | Cable-to-cable & tray-to-tray separation, visualization, PDF |
@@ -37,6 +37,7 @@ graph TD
     TRAY --> TRAY_STD["IEC 60364 / NEC / BS 7671"]
     TRAY --> TRAY_OUT["Fill % · Visual Cross-Section · PDF"]
     TRAY --> TRAY_DERATE["Single-layer mode · 2-diameter spacing\nTable 90.7, Hok HaHashmal\nReduces thermal derating"]
+    TRAY --> TRAY_HV["HV/MV cable library\nNA2XS(F)2Y 12/20kV & 18/30kV\nTrefoil arrangement · Bend radius check (IEC)"]
 
     CONDUIT --> CONDUIT_STD["Israel Electrical Code\nreg. 18, ch. 3\nFormula: D = √n × d × 1.6"]
     CONDUIT --> CONDUIT_TYPES["PVC / PP / HDPE / Steel\nMetric & Imperial\nMV 22kV–33kV (N2XSY / NA2XSY)"]
@@ -57,6 +58,9 @@ graph TD
 - **Dark / Light theme**
 - **PDF export** in every module
 - **Single-layer derating mode** — Cable Tray Fill module supports 2-diameter spacing between cables per Table 90.7 (Hok HaHashmal) to reduce thermal interaction and minimize current derating; gap dimensions shown visually on cross-section
+- **HV/MV cable library** — NA2XS(F)2Y single-core cables for 12/20 kV and 18/30 kV, with voltage-class grouping in the cable selector
+- **Trefoil arrangement** — automatic grouping of HV single-core cables into trefoil sets (groups of 3), with visual cross-section and overflow warning when tray height is insufficient
+- **Bend radius check** — per-cable Rmin validation (IEC 60502-2) against tray outer radius, shown in UI and in PDF report with substituted formula
 - **No install** — pure HTML/CSS/JS, runs in any browser
 - **No dependencies** — no server, no framework, no build step
 
